@@ -21,7 +21,11 @@
 
           <form method="POST">
             {% csrf_token %}
+            {% if request.user.is_authenticated %}
             <a class="btn btn-success" href="/votes/" role="button">Vote!</a>
+            {% else %}
+            <button type="submit" class="btn btn-success" disabled>Vote!</button>
+            {% endif %}
           </form>
 				</div>
             </div>

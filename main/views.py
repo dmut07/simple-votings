@@ -32,6 +32,10 @@ def votes(request):
             'votes': Vote.objects.all(),
         }
     context['user_id'] = get_user_id(request)
+    for vote in context['votes']:
+        profile = Profile.objects.filter(user_id=vote.user_id).first()
+        if profile:
+            vote.user_name = profile.user.username
     return render(request, 'pages/votes.html', context)
 
 def get_user_id(request):

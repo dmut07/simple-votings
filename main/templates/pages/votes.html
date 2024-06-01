@@ -8,6 +8,7 @@
         <th scope="col">Id</th>
         <th scope="col">Title</th>
         <th scope="col">Description</th>
+        <th scope="col">Author</th>
         <th scope="col">Link</th>
       </tr>
     </thead>
@@ -15,14 +16,15 @@
     <div class="text-end">
       <a class="btn btn-success" href="/vote_form/" role="button">Create Vote</a>
     </div>
- {% for vote in votes %}
+    {% for vote in votes %}
       <tr class="border-start border-end">
         <th class="border-end" scope="row">{{vote.id}}</th>
         <td>{{vote.title}}</td>
         <td class="text-small text-break">{{vote.description}}</td>
+        <td>{{vote.user_name}}</td>
         <td><a href="/vote/{{vote.id}}">Link</a></td>
       </tr>
- {% endfor %}
+    {% endfor %}
     </tbody>
   </table>
 </div>

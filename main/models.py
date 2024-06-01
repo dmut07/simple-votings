@@ -24,7 +24,7 @@ class Vote(models.Model):
     """
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True, max_length=200)
-    # author = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
     user_id = models.IntegerField(null=True)
     user_name = models.CharField(max_length=255, null=True, default='Anonim')
 

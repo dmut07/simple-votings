@@ -9,8 +9,8 @@
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-0">
       <div class="col-md-3 mb-0 mb-md-0">
         <ul class="nav col-12 col-md-auto mb-0 justify-content-center mb-md-0">
-          <li><span class="fw-bolder text-light fs-1">Simple</span></li>
-          <li><span class="fw-bolder text-success fs-1">Votings</span></li>
+          <li><span class="fw-bolder text-light fs-2" onclick="window.location.href='/';">Simple</span></li>
+          <li><span class="fw-bolder text-success fs-2" onclick="window.location.href='/';">Votings</span></li>
         </ul>
       </div>
       <ul class="nav col-12 col-md-auto mb-0 justify-content-center mb-md-0">
@@ -20,6 +20,7 @@
       <div class="col-md-3 text-end">
         {% if request.user.is_authenticated %}
                     <a class="btn btn-success me-2" href="/logout/" role="button">Sign-out</a>
+                    <a class="btn btn-success me-2" href="/profile/" role="button">Profile</a>
                 {% else %}
                     <a class="btn btn-success me-2" href="/registration/" role="button">Registration</a>
                     <a class="btn btn-success me-2" href="/login/" role="button">Sign-in</a>
