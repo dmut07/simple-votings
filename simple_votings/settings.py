@@ -3,6 +3,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 # Эта настройка отключена в шаблоне, чтобы все проекты обязательно указывали свой индивидуальный SECRET_KEY.
 # Генерация делается в консоли Python при помощи команд:
@@ -126,3 +127,6 @@ LOGOUT_REDIRECT_URL = '/'
 # Проверка тех, кто ленится указать корректный SECRET_KEY
 if SECRET_KEY == 'Insert secret key here and uncomment this variable':
     raise RuntimeError('Сначала укажите SECRET_KEY. Подробности - в settings.py')
+
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'

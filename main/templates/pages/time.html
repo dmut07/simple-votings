@@ -6,7 +6,22 @@
         <div>
             <h1>Текущее время</h1>
             <hr>
-            <p>Время на сервере: {{ time.hour }} часов, {{ time.minute }} минут и {{ time.second }} секунд</p>
+          <p>Время на сервере: <span id="hours"></span> часов, <span id="minutes"></span> минут и <span id="seconds"></span> секунд</p>
         </div>
     </div>
+<script>
+  var now = new Date();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds()
+  let h = document.getElementById("hours");
+  h.innerHTML = hours;
+  let m = document.getElementById("minutes");
+  m.innerHTML = minutes;
+  let s = document.getElementById("seconds");
+  s.innerHTML = seconds;
+  setTimeout(function(){
+	location.reload();
+}, 1000);
+</script>
 {% endblock %}
