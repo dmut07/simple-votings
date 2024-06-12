@@ -1,5 +1,6 @@
 import datetime
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
 from django.core.handlers.wsgi import WSGIRequest
 # from main.forms import HomeForm
@@ -141,3 +142,7 @@ def voting_page(request, _id):
         },
     }
     return render(request, "pages/vote.html", context)
+@login_required(login_url='/login')
+def profile_page(request):
+    context = {}
+    return render(request, 'pages/profile.html', context)
