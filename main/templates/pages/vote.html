@@ -1,0 +1,35 @@
+{% extends "base/base.html" %}
+{% block content %}
+<title>Голосовать</title>
+	<main style="max-width: 800px; margin: 20px auto">
+		<div class="mx-auto">
+            <div class="border-secondary mx-auto">
+                <!-- voting -->
+				<div class="card-body">
+                    <div class="d-flex mx-auto justify-content-between">
+                        <h3 class="mb-4 text-success fs-2 fw-bolder">{{ title }}</h3>
+                    </div>
+					<p class="border border-success mb-4 text-break">{{ description }}</p>
+
+					<div style="margin-bottom: 15px">
+            {%for item in question.ques%}
+						<div>
+							<input type="radio" id=item.id name="voting">
+							<label for=item.id>{{item.text}}</label>
+						</div>
+            {%endfor%}
+					</div>
+
+          <form method="POST">
+            {% csrf_token %}
+            {% if request.user.is_authenticated %}
+            <a class="btn btn-success" href="/votes/" role="button">Vote!</a>
+            {% else %}
+            <button type="submit" class="btn btn-success" disabled>Vote!</button>
+            {% endif %}
+          </form>
+				</div>
+            </div>
+    </div>
+	</main>
+{% endblock %}
