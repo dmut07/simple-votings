@@ -1,6 +1,3 @@
-# simple-votings
- web
-=======
 # Проект "Simple votings"
 
 ### Цель
